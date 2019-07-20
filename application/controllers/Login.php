@@ -36,10 +36,7 @@ class Login extends CI_Controller {
                  }
                  if ($this->session->userdata('login') == '1') {
 		
-		$this->load->view('template/header');
-		$this->load->view('template/top_menu');  
-		$this->load->view('dashboard'); 
-		$this->load->view('template/footer');
+redirect(base_url().'dashboard',  301);
 	}
 	else{
 $this->load->view('template/header'); 

@@ -65,15 +65,27 @@ class Coordinadores_model extends CI_Model{
         } 
     }
 
-                        public function getCoordinadorId($id)
+                        public function getCoordinadorId($id_coordinador)
     {
         $query=$this->db
         ->select("*")
         ->from("coordinadores")
         ->join("parroquias", "parroquias.id_parroquia  = coordinadores.id_parroquia", "LEFT")
-        ->where("coordinadores.id_coordinador", $id)
+        ->where("coordinadores.id_coordinador", $id_coordinador)
         ->get();
         return $query->row();
+        break;
+        } 
+
+                                public function getCoordinadoresIdParroquia($id_parroquia)
+    {
+        $query=$this->db
+        ->select("*")
+        ->from("coordinadores")
+        ->join("parroquias", "parroquias.id_parroquia  = coordinadores.id_parroquia", "LEFT")
+        ->where("coordinadores.id_parroquia", $id_parroquia)
+        ->get();
+        return $query->result();
         break;
         } 
 }

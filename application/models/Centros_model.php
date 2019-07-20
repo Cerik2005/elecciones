@@ -61,17 +61,39 @@ class Centros_model extends CI_Model{
         } 
     }
 
-                              public function getCentroId($id)
+                              public function getCentroId($id_centro)
     {
         $query=$this->db
         ->select("*")
         ->from("centros")
         ->join("parroquias", "parroquias.id_parroquia  = centros.id_parroquia", "LEFT")
-        ->where("centros.id_centro", $id)
+        ->where("centros.id_centro", $id_centro)
         ->get();
         return $query->row();
         break;
 }
+                              public function getCentrosIdParroquia($id_parroquia)
+    {
+        $query=$this->db
+        ->select("*")
+        ->from("centros")
+        ->join("parroquias", "parroquias.id_parroquia  = centros.id_parroquia", "LEFT")
+        ->where("centros.id_parroquia", $id_parroquia)
+        ->get();
+        return $query->result();
+        break;
+}
 
+                          public function getCentrosIdSector($id_sector)
+    {
+        $query=$this->db
+        ->select("*")
+        ->from("centros")
+        ->join("sectores", "sectores.id_sector  = centros.id_sector", "LEFT")
+        ->where("centros.id_sector", $id_sector)
+        ->get();
+        return $query->result();
+        break;
+}
 
 }

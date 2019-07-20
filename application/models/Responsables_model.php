@@ -69,18 +69,47 @@ class Responsables_model extends CI_Model{
         } 
     }
 
-                    public function getResponsableId($id)
+                    public function getResponsableId($id_responsable)
     {
         $query=$this->db
         ->select("*")
         ->from("responsables")
         ->join("sectores", "sectores.id_sector  = responsables.id_sector", "LEFT")
         ->join("parroquias", "parroquias.id_parroquia  = sectores.id_parroquia", "LEFT")
-        ->where("responsables.id_responsable", $id)
+        ->where("responsables.id_responsable", $id_responsable)
         ->get();
         return $query->row();
         break;
         } 
+
+
+                        public function getResponsablesIdParroquia($id_parroquia)
+    {
+        $query=$this->db
+        ->select("*,responsables.id as id")
+        ->from("responsables")
+        ->join("sectores", "sectores.id_sector  = responsables.id_sector", "LEFT")
+        ->join("parroquias", "parroquias.id_parroquia  = sectores.id_parroquia", "LEFT")
+        ->where("sectores.id_parroquia", $id_parroquia)
+        ->get();
+                return $query->result();
+
+                break;
+        } 
+
+                        public function getResponsablesIdSector($id_sector)
+    {
+        $query=$this->db
+        ->select("*,responsables.id as id")
+        ->from("responsables")
+        ->join("sectores", "sectores.id_sector  = responsables.id_sector", "LEFT")
+        ->join("parroquias", "parroquias.id_parroquia  = sectores.id_parroquia", "LEFT")
+        ->where("sectores.id_sector", $id_sector)
+        ->get();
+                return $query->result();
+
+                break;
+        }
 
 // FIN USUARIOS
 }

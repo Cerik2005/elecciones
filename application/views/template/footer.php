@@ -5,7 +5,7 @@
 
 
 Todos los derechos reservados a AriemStudio <?php echo date("Y")?><br>
-Desarrollado por AriemStudio
+Desarrollado por AriemStudio www.ariemstudio.com
       </div>
     </footer>
 </html>

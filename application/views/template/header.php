@@ -103,7 +103,7 @@
      <script type="text/javascript">var webroot = '<?php echo base_url(); ?>';</script>
 
     <script src="<?php echo base_url(); ?>public/js/funciones.js"></script>
-    <script src="<?php echo base_url(); ?>public/js/Validaciones.js"></script>
+
 
 <script>var base_url = '<?php echo base_url() ?>';</script>
 
