@@ -91,7 +91,7 @@ onclick="ModalEliminar(<?php echo $elector->id_elector.",'".$elector->nombre_ele
 <script type="text/javascript">
 $(document).ready(function() {
     $('#electores').DataTable( {
-      "pageLength": 10,
+      "pageLength": 50,
 
         "language": {
     "sProcessing":     "Procesando...",

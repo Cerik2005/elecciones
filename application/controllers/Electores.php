@@ -213,7 +213,13 @@ else
             }
 
 
+    public function getSexoElectores()
+    {
 
+        $info     = $this->electores_model->getSexoElectores();
+        echo json_encode($info);
+        
+    }
 
 
 }

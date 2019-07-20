@@ -6,7 +6,31 @@ $( document ).ready(function() {
 });
 });
 
+// EVITAR ENTER SUBMIT
 
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+// FIN EVITAR ENTER SUBMIT
+
+// EVITAR DOBLE SUBMIT 
+
+$(document).ready(function() {
+
+
+        $('form').submit(function(){
+    $(this).find(':input[type=submit]').prop('disabled', true);
+});
+
+      });
+
+
+ // FIN EVITAR DOBLE SUBMIT
 
 
 

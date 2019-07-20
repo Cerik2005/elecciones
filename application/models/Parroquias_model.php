@@ -61,15 +61,16 @@ class Parroquias_model extends CI_Model{
         } 
     }
 
-                  public function getParroquiaId($id)
+                  public function getParroquiaId($id_parroquia)
     {
         $query=$this->db
         ->select("*")
         ->from("parroquias")
-        ->where("parroquias.id_parroquia", $id)
+        ->where("parroquias.id_parroquia", $id_parroquia)
         ->get();
         return $query->row();
         break;
 
         } 
+        
 }
